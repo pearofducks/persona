@@ -46,25 +46,25 @@
       <article class="element goals">
         <h3>Goals</h3>
         <ul>
-          <li>Goal 1</li>
-          <li>Goal 2</li>
-          <li>Goal 3</li>
+          <li><input class='inviso-input' placeholder="Goal 1" type="text"></li>
+          <li><input class='inviso-input' placeholder="Goal 2" type="text"></li>
+          <li><input class='inviso-input' placeholder="Goal 3" type="text"></li>
         </ul>
       </article>
       <article class="element needs">
         <h3>Needs</h3>
         <ul>
-          <li>Need 1</li>
-          <li>Need 2</li>
-          <li>Need 3</li>
+          <li><input class='inviso-input' placeholder="Need 1" type="text"></li>
+          <li><input class='inviso-input' placeholder="Need 2" type="text"></li>
+          <li><input class='inviso-input' placeholder="Need 3" type="text"></li>
         </ul>
       </article>
       <article class="element frustrations">
         <h3>Frustrations</h3>
         <ul>
-          <li>Frustration 1</li>
-          <li>Frustration 2</li>
-          <li>Frustration 3</li>
+          <li><input class='inviso-input' placeholder="Frustration 1" type="text"></li>
+          <li><input class='inviso-input' placeholder="Frustration 2" type="text"></li>
+          <li><input class='inviso-input' placeholder="Frustration 3" type="text"></li>
         </ul>
       </article>
       <article class="element technology">
@@ -111,6 +111,42 @@
       </article>
       <article class="element personality">
         <h3>Personality</h3>
+        <div class="vertical row">
+          <div class="spread row">
+            <h4>Introvert</h4>
+            <h4>Extrovert</h4>
+          </div>
+          <div class="slider">
+            <input type="range" value="5" min="0" max="10"> 
+          </div>
+        </div>
+        <div class="vertical row">
+          <div class="spread row">
+            <h4>Intuition</h4>
+            <h4>Sensing</h4>
+          </div>
+          <div class="slider">
+            <input type="range" value="5" min="0" max="10"> 
+          </div>
+        </div>
+        <div class="vertical row">
+          <div class="spread row">
+            <h4>Feeling</h4>
+            <h4>Thinking</h4>
+          </div>
+          <div class="slider">
+            <input type="range" value="5" min="0" max="10"> 
+          </div>
+        </div>
+        <div class="vertical row">
+          <div class="spread row">
+            <h4>Judging</h4>
+            <h4>Perceiving</h4>
+          </div>
+          <div class="slider">
+            <input type="range" value="5" min="0" max="10"> 
+          </div>
+        </div>
       </article>
     </main>
   </div>
@@ -142,8 +178,13 @@ main
   grid-template-columns: minmax(160px, 1fr) minmax(240px, 1.5fr) minmax(240px, 1.5fr)
   grid-auto-rows: minmax(100px, auto)
 
-section.column
-
+.inviso-input
+  border: none
+  background-color: transparent
+  color: #3d5065
+  &:placeholder-shown
+    color: #dadfe4
+    font-style: italic
 article.element
   background-color: #fbfbfc
   border: 2px solid #dadfe4
@@ -185,13 +226,49 @@ article.element
   display: flex
   align-items: center
 
+.personality
+  display: flex
+  flex-direction: column
+  justify-content: space-between
+  .row
+    margin: 0.3rem 0
+  .vertical.row
+    flex-direction: column
+    align-items: stretch
+  .spread.row
+    justify-content: space-between
+  h4
+    font-size: 1.2rem
+    margin-bottom: 0.6rem
+  .slider
+    flex: 2
+    input[type='range']
+      -webkit-appearance: none;
+      position: relative;
+      overflow: hidden;
+      height: 1.2rem;
+      width: 100%;
+      cursor: pointer;
+      border-radius: 1.2rem;
+      &::-webkit-slider-runnable-track
+        background: #dadfe4
+      &::-webkit-slider-thumb
+        -webkit-appearance: none
+        width: 3.6rem
+        height: 1.2rem
+        background: #a7b3c2
+        border-radius: 4.8rem
 .motivations
+  display: flex
+  flex-direction: column
+  justify-content: space-between
   .row
     margin: 0.3rem 0
   h4
     flex: 1
     font-size: 1.2rem
   .slider
+    flex: 2
     input[type='range']
       -webkit-appearance: none;
       position: relative;
@@ -207,9 +284,8 @@ article.element
         width: 0px
         height: 0px
         background: #fff
-        box-shadow: -100vw 0 0 100vw #3d5065
-        border: 1.2rem solid #3d5065
-    flex: 2
+        box-shadow: -100vw 0 0 100vw #a7b3c2
+        border: 1.2rem solid #a7b3c2
 
 .stats-block
   h4, p
