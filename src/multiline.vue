@@ -29,7 +29,9 @@ export default {
 </script>
 
 <style lang="sass">
-textarea
+li textarea
+  margin-bottom: 0.2rem
+textarea, input[type="text"]
   width: 100%
   resize: none
   border: none
@@ -42,5 +44,5 @@ textarea
   &.white
     color: #fbfbfc
     &::-webkit-input-placeholder
-      color: #fbfbfc
+      color: #eef1f5
 </style>

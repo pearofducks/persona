@@ -10,29 +10,29 @@
       </article>
       <article class="element stats">
         <div class="stats-block">
-          <div class="row">
+          <div class="tabular row">
             <h4>Age</h4>
-            <p>1-105</p>
+            <input type="text" placeholder="1-105">
           </div>
-          <div class="row">
+          <div class="tabular row">
             <h4>Occupation</h4>
-            <p>What they do for a living</p>
+            <input type="text" placeholder="What they do for a living">
           </div>
-          <div class="row">
+          <div class="tabular row">
             <h4>Marital Status</h4>
-            <p>Single / Married / Other</p>
+            <input type="text" placeholder="Single / Married / Other">
           </div>
-          <div class="row">
+          <div class="tabular row">
             <h4>Location</h4>
-            <p>Where they live</p>
+            <input type="text" placeholder="Where they live">
           </div>
-          <div class="row">
+          <div class="tabular row">
             <h4>Tier</h4>
-            <p>Enthusiast / Prosumer / Pro</p>
+            <input type="text" placeholder="Enthusiast / Prosumer / Pro">
           </div>
-          <div class="row">
+          <div class="tabular row">
             <h4>Archetype</h4>
-            <p>Character model</p>
+            <input type="text" placeholder="Character model">
           </div>
         </div>
       </article>
@@ -41,14 +41,14 @@
       </article>
       <article class="element bio">
         <h3>Bio</h3>
-        <multiline is-bullet :r="2" ph="A short paragraph to describe the user journey. Should include some background leading up to a current use case."></multiline>
+        <multiline :r="2" ph="A short paragraph to describe the user journey. Should include some background leading up to a current use case."></multiline>
       </article>
       <article class="element goals">
         <h3>Goals</h3>
         <ul>
-          <li><multiline ph="Goal 1"></multiline></li>
-          <li><multiline ph="Goal 2"></multiline></li>
-          <li><multiline ph="Goal 3"></multiline></li>
+          <li><multiline is-bullet ph="Goal 1"></multiline></li>
+          <li><multiline is-bullet ph="Goal 2"></multiline></li>
+          <li><multiline is-bullet ph="Goal 3"></multiline></li>
         </ul>
       </article>
       <article class="element needs">
@@ -192,6 +192,8 @@ export default {
 
 ul
   list-style: disc outside
+  li
+    color: #dadfe4
 
 header
   background-color: #228ba8
@@ -328,6 +330,12 @@ article.element
     color: #228ba8
     flex: 1
     margin-right: 0.6rem
+.tabular.row
+  margin-bottom: 1.2rem
+  input[type="text"]
+    flex: 2
+  h4
+    margin-bottom: 0
 
 .slider
   input
