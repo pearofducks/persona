@@ -9,7 +9,32 @@
         <h3>Image</h3>
       </article>
       <article class="element stats">
-        <h3>Stats</h3>
+        <div class="stats-block">
+          <div class="row">
+            <h4>Age</h4>
+            <p>1-105</p>
+          </div>
+          <div class="row">
+            <h4>Occupation</h4>
+            <p>What they do for a living</p>
+          </div>
+          <div class="row">
+            <h4>Marital Status</h4>
+            <p>Single / Married / Other</p>
+          </div>
+          <div class="row">
+            <h4>Location</h4>
+            <p>Where they live</p>
+          </div>
+          <div class="row">
+            <h4>Tier</h4>
+            <p>Enthusiast / Prosumer / Pro</p>
+          </div>
+          <div class="row">
+            <h4>Archetype</h4>
+            <p>Character model</p>
+          </div>
+        </div>
       </article>
       <article class="element brands">
         <h3>Brands</h3>
@@ -47,6 +72,42 @@
       </article>
       <article class="element motivations">
         <h3>Motivations</h3>
+        <div class="row">
+          <h4>Incentive</h4>
+          <div class="slider">
+            <input type="range" value="5" min="0" max="10"> 
+          </div>
+        </div>
+        <div class="row">
+          <h4>Fear</h4>
+          <div class="slider">
+            <input type="range" value="5" min="0" max="10"> 
+          </div>
+        </div>
+        <div class="row">
+          <h4>Achievement</h4>
+          <div class="slider">
+            <input type="range" value="5" min="0" max="10"> 
+          </div>
+        </div>
+        <div class="row">
+          <h4>Growth</h4>
+          <div class="slider">
+            <input type="range" value="5" min="0" max="10"> 
+          </div>
+        </div>
+        <div class="row">
+          <h4>Power</h4>
+          <div class="slider">
+            <input type="range" value="5" min="0" max="10"> 
+          </div>
+        </div>
+        <div class="row">
+          <h4>Social</h4>
+          <div class="slider">
+            <input type="range" value="5" min="0" max="10"> 
+          </div>
+        </div>
       </article>
       <article class="element personality">
         <h3>Personality</h3>
@@ -63,8 +124,6 @@ export default {
 
 <style lang="sass">
 #app
-  // width: 42cm
-  // height: 29.7cm
 
 header
   background-color: #228ba8
@@ -80,7 +139,7 @@ main
   margin: 1.2rem
   display: grid
   grid-gap: 1.2rem
-  grid-template-columns: 1fr 1.5fr 1.5fr
+  grid-template-columns: minmax(160px, 1fr) minmax(240px, 1.5fr) minmax(240px, 1.5fr)
   grid-auto-rows: minmax(100px, auto)
 
 section.column
@@ -121,6 +180,50 @@ article.element
     grid-row: 3 / 5
   h3
     color: #228ba8
+
+.row
+  display: flex
+  align-items: center
+
+.motivations
+  .row
+    margin: 0.3rem 0
+  h4
+    flex: 1
+    font-size: 1.2rem
+  .slider
+    input[type='range']
+      -webkit-appearance: none;
+      position: relative;
+      overflow: hidden;
+      height: 1.2rem;
+      width: 100%;
+      cursor: pointer;
+      border-radius: 0;
+      &::-webkit-slider-runnable-track
+        background: #dadfe4
+      &::-webkit-slider-thumb
+        -webkit-appearance: none
+        width: 0px
+        height: 0px
+        background: #fff
+        box-shadow: -100vw 0 0 100vw #3d5065
+        border: 1.2rem solid #3d5065
+    flex: 2
+
+.stats-block
+  h4, p
+    font-size: 1.2rem
+  p
+    flex: 2
+  h4
+    color: #228ba8
+    flex: 1
+    margin-right: 0.6rem
+
+.slider
+  input
+    width: 100%
 
 .image-holder
   height: 240px
