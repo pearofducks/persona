@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <header>
-      <h1>FULL NAME</h1>
+      <h1><input class="white" type="text" placeholder="FULL NAME"></h1>
       <h2>Persona</h2>
     </header>
     <main>
@@ -41,7 +41,7 @@
       </article>
       <article class="element bio">
         <h3>Bio</h3>
-        <p>A short paragraph to describe the user journey. Should include some background leading up to a current use case.</p>
+        <textarea rows="2" placeholder="A short paragraph to describe the user journey. Should include some background leading up to a current use case."></textarea>
       </article>
       <article class="element goals">
         <h3>Goals</h3>
@@ -178,13 +178,23 @@ main
   grid-template-columns: minmax(160px, 1fr) minmax(240px, 1.5fr) minmax(240px, 1.5fr)
   grid-auto-rows: minmax(100px, auto)
 
-.inviso-input
+// onchange
+// el.style.height = 0px
+// el.style.height = el.scrollHeight
+textarea
+  width: 100%
+  resize: none
+textarea, input[type="text"]
   border: none
   background-color: transparent
   color: #3d5065
-  &:placeholder-shown
-    color: #dadfe4
+  &::-webkit-input-placeholder
+    color: #a7b3c2
     font-style: italic
+  &.white
+    color: #fbfbfc
+    &::-webkit-input-placeholder
+      color: #fbfbfc
 article.element
   background-color: #fbfbfc
   border: 2px solid #dadfe4
