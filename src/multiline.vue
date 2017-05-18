@@ -37,7 +37,7 @@ textarea, input[type="text"]
   border: none
   background-color: transparent
   color: #3d5065
-  vertical-align: middle
+  vertical-align: top
   &::-webkit-input-placeholder
     color: #a7b3c2
     font-style: italic
