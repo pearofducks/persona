@@ -41,34 +41,62 @@
       </article>
       <article class="element bio">
         <h3>Bio</h3>
-        <textarea rows="2" placeholder="A short paragraph to describe the user journey. Should include some background leading up to a current use case."></textarea>
+        <multiline is-bullet :r="2" ph="A short paragraph to describe the user journey. Should include some background leading up to a current use case."></multiline>
       </article>
       <article class="element goals">
         <h3>Goals</h3>
         <ul>
-          <li><input class='inviso-input' placeholder="Goal 1" type="text"></li>
-          <li><input class='inviso-input' placeholder="Goal 2" type="text"></li>
-          <li><input class='inviso-input' placeholder="Goal 3" type="text"></li>
+          <li><multiline ph="Goal 1"></multiline></li>
+          <li><multiline ph="Goal 2"></multiline></li>
+          <li><multiline ph="Goal 3"></multiline></li>
         </ul>
       </article>
       <article class="element needs">
         <h3>Needs</h3>
         <ul>
-          <li><input class='inviso-input' placeholder="Need 1" type="text"></li>
-          <li><input class='inviso-input' placeholder="Need 2" type="text"></li>
-          <li><input class='inviso-input' placeholder="Need 3" type="text"></li>
+          <li><multiline ph="Need 1"></multiline></li>
+          <li><multiline ph="Need 2"></multiline></li>
+          <li><multiline ph="Need 3"></multiline></li>
         </ul>
       </article>
       <article class="element frustrations">
         <h3>Frustrations</h3>
         <ul>
-          <li><input class='inviso-input' placeholder="Frustration 1" type="text"></li>
-          <li><input class='inviso-input' placeholder="Frustration 2" type="text"></li>
-          <li><input class='inviso-input' placeholder="Frustration 3" type="text"></li>
+          <li><multiline ph="Frustration 1"></multiline></li>
+          <li><multiline ph="Frustration 2"></multiline></li>
+          <li><multiline ph="Frustration 3"></multiline></li>
         </ul>
       </article>
       <article class="element technology">
         <h3>Technology</h3>
+        <div class="row">
+          <div class="row child">
+            <h4>IT & Internet</h4>
+            <div class="slider">
+              <input type="range" value="5" min="0" max="10"> 
+            </div>
+          </div>
+          <div class="row child">
+            <h4>Software</h4>
+            <div class="slider">
+              <input type="range" value="5" min="0" max="10"> 
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="row child">
+            <h4>Mobile Apps</h4>
+            <div class="slider">
+              <input type="range" value="5" min="0" max="10"> 
+            </div>
+          </div>
+          <div class="row child">
+            <h4>Social Networks</h4>
+            <div class="slider">
+              <input type="range" value="5" min="0" max="10"> 
+            </div>
+          </div>
+        </div>
       </article>
       <article class="element motivations">
         <h3>Motivations</h3>
@@ -153,13 +181,17 @@
 </template>
 
 <script>
+import multiline from './multiline.vue'
 export default {
-  name: 'app'
+  name: 'app',
+  components: { multiline }
 }
 </script>
 
 <style lang="sass">
-#app
+
+ul
+  list-style: disc outside
 
 header
   background-color: #228ba8
@@ -178,23 +210,6 @@ main
   grid-template-columns: minmax(160px, 1fr) minmax(240px, 1.5fr) minmax(240px, 1.5fr)
   grid-auto-rows: minmax(100px, auto)
 
-// onchange
-// el.style.height = 0px
-// el.style.height = el.scrollHeight
-textarea
-  width: 100%
-  resize: none
-textarea, input[type="text"]
-  border: none
-  background-color: transparent
-  color: #3d5065
-  &::-webkit-input-placeholder
-    color: #a7b3c2
-    font-style: italic
-  &.white
-    color: #fbfbfc
-    &::-webkit-input-placeholder
-      color: #fbfbfc
 article.element
   background-color: #fbfbfc
   border: 2px solid #dadfe4
@@ -268,15 +283,22 @@ article.element
         height: 1.2rem
         background: #a7b3c2
         border-radius: 4.8rem
-.motivations
+
+.motivations, .technology
   display: flex
   flex-direction: column
   justify-content: space-between
   .row
     margin: 0.3rem 0
+    &.child
+      flex: 1
+    .child ~ .child
+      padding-left: 2.4rem
+      margin-left: 2.4rem
   h4
     flex: 1
     font-size: 1.2rem
+    margin-bottom: 0.6rem
   .slider
     flex: 2
     input[type='range']
@@ -310,9 +332,6 @@ article.element
 .slider
   input
     width: 100%
-
-.image-holder
-  height: 240px
 
 @media print
   #app
