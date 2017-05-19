@@ -6,7 +6,8 @@
     </header>
     <main>
       <article class="element image">
-        <h3>Image</h3>
+        <image-upload></image-upload>
+        <multiline :r="2" ph="Persona quote - should capture the essence of this persona's personality"></multiline>
       </article>
       <article class="element stats">
         <div class="stats-block">
@@ -70,72 +71,22 @@
       <article class="element technology">
         <h3>Technology</h3>
         <div class="row">
-          <div class="row child">
-            <h4>IT & Internet</h4>
-            <div class="slider">
-              <input type="range" value="5" min="0" max="10"> 
-            </div>
-          </div>
-          <div class="row child">
-            <h4>Software</h4>
-            <div class="slider">
-              <input type="range" value="5" min="0" max="10"> 
-            </div>
-          </div>
+          <strength-gauge title="IT & Internet"></strength-gauge>
+          <strength-gauge title="Software"></strength-gauge>
         </div>
         <div class="row">
-          <div class="row child">
-            <h4>Mobile Apps</h4>
-            <div class="slider">
-              <input type="range" value="5" min="0" max="10"> 
-            </div>
-          </div>
-          <div class="row child">
-            <h4>Social Networks</h4>
-            <div class="slider">
-              <input type="range" value="5" min="0" max="10"> 
-            </div>
-          </div>
+          <strength-gauge title="Mobile Apps"></strength-gauge>
+          <strength-gauge title="Social Networks"></strength-gauge>
         </div>
       </article>
       <article class="element motivations">
         <h3>Motivations</h3>
-        <div class="row">
-          <h4>Incentive</h4>
-          <div class="slider">
-            <input type="range" value="5" min="0" max="10"> 
-          </div>
-        </div>
-        <div class="row">
-          <h4>Fear</h4>
-          <div class="slider">
-            <input type="range" value="5" min="0" max="10"> 
-          </div>
-        </div>
-        <div class="row">
-          <h4>Achievement</h4>
-          <div class="slider">
-            <input type="range" value="5" min="0" max="10"> 
-          </div>
-        </div>
-        <div class="row">
-          <h4>Growth</h4>
-          <div class="slider">
-            <input type="range" value="5" min="0" max="10"> 
-          </div>
-        </div>
-        <div class="row">
-          <h4>Power</h4>
-          <div class="slider">
-            <input type="range" value="5" min="0" max="10"> 
-          </div>
-        </div>
-        <div class="row">
-          <h4>Social</h4>
-          <div class="slider">
-            <input type="range" value="5" min="0" max="10"> 
-          </div>
-        </div>
+        <strength-gauge title="Incentive"></strength-gauge>
+        <strength-gauge title="Fear"></strength-gauge>
+        <strength-gauge title="Achievement"></strength-gauge>
+        <strength-gauge title="Growth"></strength-gauge>
+        <strength-gauge title="Power"></strength-gauge>
+        <strength-gauge title="Social"></strength-gauge>
       </article>
       <article class="element personality">
         <h3>Personality</h3>
@@ -182,9 +133,11 @@
 
 <script>
 import multiline from './multiline.vue'
+import imageUpload from './imageUpload.vue'
+import strengthGauge from './strengthGauge.vue'
 export default {
   name: 'app',
-  components: { multiline }
+  components: { multiline, imageUpload, strengthGauge }
 }
 </script>
 
@@ -253,10 +206,17 @@ article.element
   display: flex
   align-items: center
 
-.personality
+// .image
+//   display: flex
+//   flex-direction: column
+
+.personality, .image
   display: flex
   flex-direction: column
   justify-content: space-between
+  > textarea
+    flex: 1
+    padding-top: 1.2rem
   .row
     margin: 0.3rem 0
   .vertical.row
@@ -291,10 +251,9 @@ article.element
   flex-direction: column
   justify-content: space-between
   .row
+    flex: 1
     margin: 0.3rem 0
-    &.child
-      flex: 1
-    .child ~ .child
+    .row ~ .row
       padding-left: 2.4rem
       margin-left: 2.4rem
   h4
