@@ -34,6 +34,11 @@
           <h4>Archetype</h4>
           <input type="text" placeholder="Character model">
         </div>
+        <div class="row wrap">
+          <var-width></var-width>
+          <var-width></var-width>
+          <var-width></var-width>
+        </div>
       </article>
       <article class="element brands">
         <h3>Brands</h3>
@@ -99,12 +104,13 @@
 
 <script>
 import multiline from './multiline.vue'
+import varWidth from './varWidth.vue'
 import imageUpload from './imageUpload.vue'
 import strengthGauge from './strengthGauge.vue'
 import balanceGauge from './balanceGauge.vue'
 export default {
   name: 'app',
-  components: { multiline, imageUpload, strengthGauge, balanceGauge }
+  components: { multiline, imageUpload, strengthGauge, balanceGauge, varWidth }
 }
 </script>
 
