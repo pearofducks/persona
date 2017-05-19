@@ -35,23 +35,3 @@ export default {
   }
 }
 </script>
-
-<style lang="sass">
-.image-wrapper
-  flex: 3
-  background-color: #fbfbfc
-  height: 100%
-  width: 100%
-  background-size: contain
-  background-repeat: no-repeat
-  &.no-image
-    display: flex
-    align-items: center
-    justify-content: center
-    border: 2px dashed #dadfe4
-    &:before
-      content: "DROP IMAGE HERE"
-      font-size: 1.6rem
-      font-weight: 600
-      color: #dadfe4
-</style>

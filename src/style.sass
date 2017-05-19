@@ -1,0 +1,198 @@
+@import '../../propellant/css/propellant'
+
+ul
+  list-style: disc outside
+  li
+    color: $lightgray-color
+
+header
+  background-color: $primary-color
+  color: $light-color
+  display: flex
+  align-items: center
+  justify-content: space-between
+  padding: 0.6rem 1.2rem
+  > *
+    margin: 0
+
+main
+  margin: 1.2rem
+  display: grid
+  grid-gap: 1.2rem
+  grid-template-columns: minmax(160px, 1fr) minmax(240px, 1.5fr) minmax(240px, 1.5fr)
+  grid-auto-rows: minmax(100px, auto)
+
+article.element
+  background-color: $light-color
+  border: 2px solid $border-color
+  padding: 1.2rem
+  &.image
+    grid-column: 1
+    grid-row: 1 / 3
+  &.stats
+    grid-column: 1
+    grid-row: 3 / 5
+  &.brands
+    grid-column: 1
+    grid-row: 5
+  &.bio
+    grid-column: 2
+    grid-row: 1
+  &.goals
+    grid-column: 2
+    grid-row: 2
+  &.needs
+    grid-column: 2
+    grid-row: 3
+  &.frustrations
+    grid-column: 2
+    grid-row: 4
+  &.technology
+    grid-column: 2 / 4
+    grid-row: 5
+  &.motivations
+    grid-column: 3
+    grid-row: 1 / 3
+  &.personality
+    grid-column: 3
+    grid-row: 3 / 5
+  h3
+    color: $primary-color
+  h4
+    font-size: 1.2rem
+    margin-bottom: 0.6rem
+
+.column
+  display: flex
+  flex-direction: column
+.row
+  display: flex
+  align-items: center
+.1-3
+  flex: 1
+.2-3
+  flex: 2
+
+.personality, .image, .motivations, .technology
+  justify-content: space-between
+
+.personality, .image
+  > textarea
+    flex: 1
+    padding-top: 1.2rem
+
+.motivations, .technology
+  .row
+    flex: 1
+    margin: 0.3rem 0
+    .row ~ .row
+      padding-left: 2.4rem
+      margin-left: 2.4rem
+
+.stats
+  h4
+    color: $primary-color
+    flex: 1
+    margin-right: 0.6rem
+  input[type="text"]
+    flex: 2
+    margin-bottom: 0.6rem
+  .row
+    margin-bottom: 1.2rem
+
+// image upload
+
+.image-wrapper
+  flex: 3
+  background-color: $light-color
+  height: 100%
+  width: 100%
+  background-size: contain
+  background-repeat: no-repeat
+  &.no-image
+    display: flex
+    align-items: center
+    justify-content: center
+    border: 2px dashed $border-color
+    &:before
+      content: "DROP IMAGE HERE"
+      font-size: 1.6rem
+      font-weight: 600
+      color: $border-color
+
+// balanceGauge
+
+.column
+  align-items: stretch
+.spread.row
+  justify-content: space-between
+.slider
+  margin: 0.3rem 0
+  input[type='range']
+    appearance: none;
+    position: relative;
+    overflow: hidden;
+    height: 1.2rem;
+    width: 100%;
+    cursor: pointer;
+    border-radius: 1.2rem;
+    &::-webkit-slider-runnable-track
+      background: $lightgray-color
+    &::-webkit-slider-thumb
+      -webkit-appearance: none
+      width: 3.6rem
+      height: 1.2rem
+      background: $gray-color
+      border-radius: 4.8rem
+
+// strength gauge
+
+.strength-gauge-title
+  flex: 1
+.strength-gauge
+  flex: 2
+  input[type='range']
+    appearance: none;
+    position: relative;
+    overflow: hidden;
+    height: 1.2rem;
+    width: 100%;
+    cursor: pointer;
+    border-radius: 0;
+    &::-webkit-slider-runnable-track
+      background: $lightgray-color
+    &::-webkit-slider-thumb
+      -webkit-appearance: none
+      width: 0px
+      height: 0px
+      background: #fff
+      box-shadow: -100vw 0 0 100vw $gray-color
+      border: 1.2rem solid $gray-color
+
+// multiline
+
+li textarea
+  margin-bottom: 0.2rem
+textarea, input[type="text"]
+  width: 100%
+  resize: none
+  border: none
+  background-color: transparent
+  color: $dark-color
+  vertical-align: top
+  &::-webkit-input-placeholder
+    color: $gray-color
+    font-style: italic
+  &.white
+    color: $light-color
+    &::-webkit-input-placeholder
+      color: $background-color
+
+@media print
+  #app
+    width: 42cm
+    height: 29.7cm
+    display: flex
+    flex-direction: column
+    align-items: stretch
+    justify-content: center

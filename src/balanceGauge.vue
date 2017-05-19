@@ -25,27 +25,3 @@ export default {
   }
 }
 </script>
-<style lang="sass">
-.column
-  align-items: stretch
-.spread.row
-  justify-content: space-between
-.slider
-  margin: 0.3rem 0
-  input[type='range']
-    -webkit-appearance: none;
-    position: relative;
-    overflow: hidden;
-    height: 1.2rem;
-    width: 100%;
-    cursor: pointer;
-    border-radius: 1.2rem;
-    &::-webkit-slider-runnable-track
-      background: #dadfe4
-    &::-webkit-slider-thumb
-      -webkit-appearance: none
-      width: 3.6rem
-      height: 1.2rem
-      background: #a7b3c2
-      border-radius: 4.8rem
-</style>

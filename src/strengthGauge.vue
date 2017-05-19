@@ -18,26 +18,3 @@ export default {
   }
 }
 </script>
-<style lang="sass">
-.strength-gauge-title
-  flex: 1
-.strength-gauge
-  flex: 2
-  input[type='range']
-    -webkit-appearance: none;
-    position: relative;
-    overflow: hidden;
-    height: 1.2rem;
-    width: 100%;
-    cursor: pointer;
-    border-radius: 0;
-    &::-webkit-slider-runnable-track
-      background: #dadfe4
-    &::-webkit-slider-thumb
-      -webkit-appearance: none
-      width: 0px
-      height: 0px
-      background: #fff
-      box-shadow: -100vw 0 0 100vw #a7b3c2
-      border: 1.2rem solid #a7b3c2
-</style>
