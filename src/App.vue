@@ -35,9 +35,9 @@
           <input type="text" placeholder="Character model">
         </div>
         <div class="row wrap">
-          <var-width></var-width>
-          <var-width></var-width>
-          <var-width></var-width>
+          <pill></pill>
+          <pill></pill>
+          <pill></pill>
         </div>
       </article>
       <article class="element brands">
@@ -104,13 +104,13 @@
 
 <script>
 import multiline from './multiline.vue'
-import varWidth from './varWidth.vue'
+import pill from './pill.vue'
 import imageUpload from './imageUpload.vue'
 import strengthGauge from './strengthGauge.vue'
 import balanceGauge from './balanceGauge.vue'
 export default {
   name: 'app',
-  components: { multiline, imageUpload, strengthGauge, balanceGauge, varWidth }
+  components: { multiline, imageUpload, strengthGauge, balanceGauge, pill }
 }
 </script>
 

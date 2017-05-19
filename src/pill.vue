@@ -3,7 +3,7 @@
 </template>
 <script>
 export default {
-  name: 'var-width',
+  name: 'pill',
   mounted() {
     this.$el.style.width = '10rem'
   },
