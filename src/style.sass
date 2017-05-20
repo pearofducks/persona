@@ -39,8 +39,7 @@ article.element
   padding: 1.2rem
   @each $element in image, stats, brands, bio, goals, needs, frustrations, technology, motivations, personality
     &.#{$element}
-      grid-column: $element
-      grid-row: $element
+      grid-area: $element
   h3
     color: $primary-color
   h4
