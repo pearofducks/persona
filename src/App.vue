@@ -42,6 +42,7 @@
       </article>
       <article class="element brands">
         <h3>Brands</h3>
+        <multiline :r="2" ph="A collection of grayscale logos representing the user's favorite brands should go here."></multiline>
       </article>
       <article class="element bio">
         <h3>Bio</h3>
