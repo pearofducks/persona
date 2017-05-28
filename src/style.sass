@@ -1,5 +1,23 @@
 @import '../../propellant/css/propellant'
 
+header, main
+  transition: 1s ease
+
+.menu
+  transform: translateY(6rem)
+
+.slide-down-enter-active, .slide-down-leave-active
+  transition: transform 1s ease
+.slide-down-enter, .slide-down-leave-to
+  transform: translateY(-100%)
+
+.options
+  height: 6rem
+  background-color: $secondary-color
+  position: absolute
+  width: 100%
+  padding: 0.6rem 1.2rem
+
 input.pill
   background-color: $secondary-color !important
   text-align: center
@@ -22,8 +40,20 @@ header
   align-items: center
   justify-content: space-between
   padding: 0.6rem 1.2rem
-  > *
+  h1
+    line-height: 3.2rem
+    margin-bottom: 0.2rem
+  input
+    font-weight: inherit
+  .right
+    display: flex
+    align-items: center
+  *
     margin: 0
+  #menu-icon
+    margin-right: 2.4rem
+  #user-icon
+    display: none
 
 main
   margin: 1.2rem
@@ -184,3 +214,9 @@ textarea, input[type="text"]
     flex-direction: column
     align-items: stretch
     justify-content: center
+  header
+    #menu-icon
+      display: none
+    #user-icon
+      display: block
+      margin-right: 2.4rem

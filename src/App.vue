@@ -1,10 +1,21 @@
 <template>
   <div id="app">
-    <header>
+    <transition name="slide-down">
+      <section class="options" v-if="showingMenu"><h2>sup dudes</h2></section>
+    </transition>
+    <header :class="{ 'menu': showingMenu }">
       <h1><input class="white" type="text" placeholder="FULL NAME"></h1>
-      <h2>Persona</h2>
+      <div class="right" @click="toggleMenu">
+        <svg id="menu-icon" viewBox="0 0 32 32" height="2.4rem" fill="none" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
+          <path d="M4 8 L28 8 M4 16 L28 16 M4 24 L28 24" />
+        </svg>   
+        <svg id="user-icon" viewBox="0 0 32 32" height="2.4rem" fill="none" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
+          <path d="M22 11 C22 16 19 20 16 20 13 20 10 16 10 11 10 6 12 3 16 3 20 3 22 6 22 11 Z M4 30 L28 30 C28 21 22 20 16 20 10 20 4 21 4 30 Z" />
+        </svg>
+        <h1>Persona</h1>
+      </div>
     </header>
-    <main>
+    <main :class="{ 'menu': showingMenu }">
       <article class="element image column">
         <image-upload></image-upload>
         <multiline :r="2" ph="Persona quote - should capture the essence of this persona's personality"></multiline>
@@ -111,7 +122,15 @@ import strengthGauge from './strengthGauge.vue'
 import balanceGauge from './balanceGauge.vue'
 export default {
   name: 'app',
-  components: { multiline, imageUpload, strengthGauge, balanceGauge, pill }
+  components: { multiline, imageUpload, strengthGauge, balanceGauge, pill },
+  data() {
+    return { showingMenu: false }
+  },
+  methods: {
+    toggleMenu() {
+      this.showingMenu = ! this.showingMenu
+    }
+  }
 }
 </script>
 
