@@ -1,4 +1,6 @@
-@import '../../propellant/css/propellant'
+$base: 0.3rem;
+@import '../../components/propellant'
+
 
 header, main
   transition: 0.5s ease
@@ -13,13 +15,13 @@ header, main
 
 .options
   height: 6rem
-  background-color: $secondary-color
+  background-color: colors(primary, light)
   position: absolute
   width: 100%
   padding: 0.6rem 1.2rem
 
 input.pill
-  background-color: $secondary-color !important
+  background-color: colors(primary, light) !important
   text-align: center
   margin: 0.6rem
   padding: 0.6rem
@@ -31,11 +33,11 @@ input.pill
 ul
   list-style: disc outside
   li
-    color: $lightgray-color
+    color: colors(gray, light)
 
 header
-  background-color: $primary-color
-  color: $light-color
+  background-color: colors(primary)
+  color: colors(light)
   display: flex
   align-items: center
   justify-content: space-between
@@ -64,14 +66,14 @@ main
   grid-template-areas: "image bio motivations" "image goals motivations" "stats needs personality" "stats frustrations personality" "brands technology technology"
 
 article.element
-  background-color: $light-color
+  background-color: colors(light)
   border: 2px solid $border-color
   padding: 1.2rem
   @each $element in image, stats, brands, bio, goals, needs, frustrations, technology, motivations, personality
     &.#{$element}
       grid-area: $element
   h3
-    color: $primary-color
+    color: colors(primary)
   h4
     font-size: 1.2rem
     margin-bottom: 0.6rem
@@ -111,7 +113,7 @@ article.element
 
 .stats
   h4
-    color: $primary-color
+    color: colors(primary)
     flex: 1
     margin-right: 0.6rem
   .tabular input[type="text"]
@@ -124,7 +126,7 @@ article.element
 
 .image-wrapper
   flex: 3
-  background-color: $light-color
+  background-color: colors(light)
   height: 100%
   width: 100%
   background-size: contain
@@ -157,12 +159,12 @@ article.element
     cursor: pointer;
     border-radius: 1.2rem;
     &::-webkit-slider-runnable-track
-      background: $lightgray-color
+      background: colors(gray, light)
     &::-webkit-slider-thumb
       -webkit-appearance: none
       width: 3.6rem
       height: 1.2rem
-      background: $gray-color
+      background: colors(gray)
       border-radius: 4.8rem
 
 // strength gauge
@@ -182,14 +184,14 @@ article.element
     cursor: pointer;
     border-radius: 0;
     &::-webkit-slider-runnable-track
-      background: $lightgray-color
+      background: colors(gray, light)
     &::-webkit-slider-thumb
       -webkit-appearance: none
       width: 0px
       height: 0px
       background: #fff
-      box-shadow: -100vw 0 0 100vw $gray-color
-      border: 1.2rem solid $gray-color
+      box-shadow: -100vw 0 0 100vw colors(gray)
+      border: 1.2rem solid colors(gray)
 
 // multiline
 
@@ -200,15 +202,15 @@ textarea, input[type="text"]
   resize: none
   border: none
   background-color: transparent
-  color: $dark-color
+  color: colors(gray, dark)
   vertical-align: top
   &::-webkit-input-placeholder
-    color: $gray-color
+    color: colors(gray)
     font-style: italic
   &.white
-    color: $light-color
+    color: colors(light)
     &::-webkit-input-placeholder
-      color: $background-color
+      color: colors(background)
 
 @media print
   #app
