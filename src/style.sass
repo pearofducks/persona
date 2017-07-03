@@ -1,6 +1,9 @@
 $base: 0.3rem;
 @import '../../components/propellant'
 
+\:root
+  --accent: colors(primary)
+  --accentLight: colors(primary, light)
 
 header, main
   transition: 0.5s ease
@@ -16,12 +19,14 @@ header, main
 .options
   height: 6rem
   background-color: colors(primary, light)
+  background-color: var(--accentLight)
   position: absolute
   width: 100%
   padding: 0.6rem 1.2rem
 
 input.pill
   background-color: colors(primary, light) !important
+  background-color: var(--accentLight) !important
   text-align: center
   margin: 0.6rem
   padding: 0.6rem
@@ -37,6 +42,7 @@ ul
 
 header
   background-color: colors(primary)
+  background-color: var(--accent)
   color: colors(light)
   display: flex
   align-items: center
@@ -74,6 +80,7 @@ article.element
       grid-area: $element
   h3
     color: colors(primary)
+    color: var(--accent)
   h4
     font-size: 1.2rem
     margin-bottom: 0.6rem
@@ -114,6 +121,7 @@ article.element
 .stats
   h4
     color: colors(primary)
+    color: var(--accent)
     flex: 1
     margin-right: 0.6rem
   .tabular input[type="text"]
